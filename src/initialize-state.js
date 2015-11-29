@@ -2,6 +2,7 @@ var hg = require('mercury');
 var translations = require('./translations');
 var dateFormat = require('dateformat');
 var xtend = require('xtend');
+var channels = require('./channels');
 
 module.exports = function initializeState(opts) {
   var args = opts || {};
@@ -14,19 +15,19 @@ module.exports = function initializeState(opts) {
   };
 
   return hg.state({
+    channels: channels,
     model: hg.struct({
-      open: hg.value(false),
-      // FIXME: initialize from element if it exists
-      isPopUpTop: hg.value(false),
-      isButtonInBottomHalf: hg.value(false),
-      // FIXME: initialize from current date
       displayedMonth: hg.value(selectedDate.getMonth()),
       displayedYear: hg.value(selectedDate.getFullYear()),
-      translation: translation,
+      highlightedDayIndex: hg.value(null),
+      // FIXME: initialize from element if it exists
+      isButtonInBottomHalf: hg.value(false),
+      isPopUpTop: hg.value(false),
+      isOpen: hg.value(false),
       selectedDay: hg.value(selectedDate.getDate()),
       selectedMonth: hg.value(selectedDate.getMonth()),
       selectedYear: hg.value(selectedDate.getFullYear()),
-      highlightedDayIndex: hg.value(null),
+      translation: translation,
       years: {}
     })
   });

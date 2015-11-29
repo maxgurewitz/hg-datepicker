@@ -9,8 +9,13 @@ describe('initializeState', function() {
       })();
 
       helpers.expect(state).to.eql({
+        channels: {
+          toggle: {
+            type: 'dom-delegator-handle'
+          }
+        },
         model: {
-          open: false,
+          isOpen: false,
           isPopUpTop: false,
           isButtonInBottomHalf: false,
           displayedMonth: 10,
