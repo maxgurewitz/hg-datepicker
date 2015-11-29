@@ -11,7 +11,55 @@ describe('initializeState', function() {
           isButtonInBottomHalf: false,
           displayedMonth: 0,
           displayedYear: 2015,
-          translations: {},
+          translation: {
+            format: 'd mmmm, yyyy',
+            monthsFull: [
+              'January',
+              'February',
+              'March',
+              'April',
+              'May',
+              'June',
+              'July',
+              'August',
+              'September',
+              'October',
+              'November',
+              'December'
+            ],
+            monthsShort: [
+              'Jan',
+              'Feb',
+              'Mar',
+              'Apr',
+              'May',
+              'Jun',
+              'Jul',
+              'Aug',
+              'Sep',
+              'Oct',
+              'Nov',
+              'Dec'
+            ],
+            weekdaysFull: [
+              'Sunday',
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday'
+            ],
+            weekdaysShort: [
+              'Sun',
+              'Mon',
+              'Tue',
+              'Wed',
+              'Thu',
+              'Fri',
+              'Sat'
+            ]
+          },
           selectedDay: null,
           selectedMonth: null,
           selectedYear: null,

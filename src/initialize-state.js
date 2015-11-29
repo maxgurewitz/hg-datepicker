@@ -1,6 +1,9 @@
 var hg = require('mercury');
+var translations = require('./translations');
 
 module.exports = function initializeState(opts) {
+  var args = opts || {};
+
   return hg.state({
     model: hg.struct({
       open: hg.value(false),
@@ -11,7 +14,7 @@ module.exports = function initializeState(opts) {
       displayedMonth: hg.value(0),
       displayedYear: hg.value(2015),
       // FIXME: set translations based on requested locale
-      translations: {},
+      translation: translations[args.locale || 'en-US'],
       selectedDay: hg.value(null),
       selectedMonth: hg.value(null),
       selectedYear: hg.value(null),
