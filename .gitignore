@@ -1,0 +1,8 @@
+.DS_Store
+.*.swp
+*.log
+*.err
+.bin
+coverage
+node_modules
+disc.html

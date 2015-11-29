@@ -1,0 +1,29 @@
+{
+  "name": "hg-datepicker",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "gulp test",
+    "lint": "gulp lint:js"
+  },
+  "dependencies": {
+    "mercury": "^14.0.0"
+  },
+  "devDependencies": {
+    "browserify": "*",
+    "chai": "*",
+    "eslint": "*",
+    "eslint-plugin-mocha": "*",
+    "gulp": "*",
+    "gulp-eslint": "*",
+    "gulp-mocha": "*",
+    "gulp-rename": "*",
+    "gulp-util": "*",
+    "mocha": "*",
+    "require-directory": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*"
+  }
+}
