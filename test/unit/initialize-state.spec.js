@@ -2,17 +2,21 @@ var helpers = require(__BASE + '/test/helpers');
 var initializeState = require(__BASE + '/src/initialize-state');
 
 describe('initializeState', function() {
-  describe('with default values', function() {
-    it('returns hello world', function() {
-      helpers.expect(initializeState()()).to.eql({
+  describe('with optional arguments', function() {
+    it('contains the expected values', function() {
+      var state = initializeState({
+        selectedDate: new Date('Sun Nov 29 2015')
+      })();
+
+      helpers.expect(state).to.eql({
         model: {
           open: false,
           isPopUpTop: false,
           isButtonInBottomHalf: false,
-          displayedMonth: 0,
+          displayedMonth: 10,
           displayedYear: 2015,
           translation: {
-            format: 'd mmmm, yyyy',
+            format: 'mmm d, yyyy',
             monthsFull: [
               'January',
               'February',
@@ -60,9 +64,9 @@ describe('initializeState', function() {
               'Sat'
             ]
           },
-          selectedDay: null,
-          selectedMonth: null,
-          selectedYear: null,
+          selectedDay: 29,
+          selectedMonth: 10,
+          selectedYear: 2015,
           highlightedDayIndex: null,
           years: {}
         }

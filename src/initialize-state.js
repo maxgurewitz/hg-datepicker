@@ -1,8 +1,17 @@
 var hg = require('mercury');
 var translations = require('./translations');
+var dateFormat = require('dateformat');
+var xtend = require('xtend');
 
 module.exports = function initializeState(opts) {
   var args = opts || {};
+  var translation = xtend(translations['en-US'], translations[args.locale] || {});
+  var selectedDate = args.selectedDate || new Date();
+
+  dateFormat.i18n = {
+    dayNames: translation.weekdaysShort.concat(translation.weekdaysFull),
+    monthNames: translation.monthsShort.concat(translation.monthsFull)
+  };
 
   return hg.state({
     model: hg.struct({
@@ -11,15 +20,14 @@ module.exports = function initializeState(opts) {
       isPopUpTop: hg.value(false),
       isButtonInBottomHalf: hg.value(false),
       // FIXME: initialize from current date
-      displayedMonth: hg.value(0),
-      displayedYear: hg.value(2015),
-      // FIXME: set translations based on requested locale
-      translation: translations[args.locale || 'en-US'],
-      selectedDay: hg.value(null),
-      selectedMonth: hg.value(null),
-      selectedYear: hg.value(null),
+      displayedMonth: hg.value(selectedDate.getMonth()),
+      displayedYear: hg.value(selectedDate.getFullYear()),
+      translation: translation,
+      selectedDay: hg.value(selectedDate.getDate()),
+      selectedMonth: hg.value(selectedDate.getMonth()),
+      selectedYear: hg.value(selectedDate.getFullYear()),
       highlightedDayIndex: hg.value(null),
-      years: hg.struct({})
+      years: {}
     })
   });
 };

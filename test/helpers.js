@@ -1,7 +1,7 @@
 var chai = require('chai');
+var chaiVirtualDom = require('chai-virtual-dom');
 
-// In this file set chai plugins, and to export any test
-// utilities.
+chai.use(chaiVirtualDom);
 
 module.exports = {
   expect: chai.expect
