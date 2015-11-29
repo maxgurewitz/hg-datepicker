@@ -6,7 +6,17 @@ describe('initializeState', function() {
     it('returns hello world', function() {
       helpers.expect(initializeState()()).to.eql({
         model: {
-          open: false
+          open: false,
+          isPopUpTop: false,
+          isButtonInBottomHalf: false,
+          displayedMonth: 0,
+          displayedYear: 2015,
+          translations: {},
+          selectedDay: null,
+          selectedMonth: null,
+          selectedYear: null,
+          highlightedDayIndex: null,
+          years: {}
         }
       });
     });
