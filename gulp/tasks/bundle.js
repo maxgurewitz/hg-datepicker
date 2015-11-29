@@ -31,7 +31,7 @@ module.exports.watch = {
 
     var bundler = browserify(bundlePath, browserifyOpts);
 
-    watchify(bundler, { delay: 10 })
+    watchify(bundler, { delay: 50 })
       .on('update', function updateBundle() {
         bundle(bundler);
       })
