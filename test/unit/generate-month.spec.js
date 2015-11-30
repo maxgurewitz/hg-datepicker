@@ -13,7 +13,7 @@ describe('generateMonth', function() {
     }))
   });
 
-  describe.only('december 2015', function() {
+  describe('december 2015', function() {
     var currentDay = 5;
     var december2015 = generateMonth({
       currentDay: currentDay,

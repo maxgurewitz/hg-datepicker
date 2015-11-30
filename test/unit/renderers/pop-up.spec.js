@@ -50,7 +50,7 @@ describe('popUp', function() {
       });
 
       it('its translate y is set appropriately to create the desired animation', function() {
-        expect(popUp(state).properties.style).to.containSubset({ transform: 'translateY(-1em) perspective(600px)' });
+        expect(popUp(state).properties.style).to.containSubset({ transform: 'translateY(-1em) perspective(600px) rotateX(0)' });
       });
     });
 
@@ -60,7 +60,7 @@ describe('popUp', function() {
       });
 
       it('its translate y is set appropriately to create the desired animation', function() {
-        expect(popUp(state).properties.style).to.containSubset({ transform: 'translateY(1em) perspective(600px)' });
+        expect(popUp(state).properties.style).to.containSubset({ transform: 'translateY(1em) perspective(600px) rotateX(0)' });
       });
     });
   });
@@ -81,7 +81,7 @@ describe('popUp', function() {
     });
 
     it('no transform is applied', function() {
-      expect(popUp(state).properties.style.transform).to.be.undefined;
+      expect(popUp(state).properties.style.transform).to.equal('translateY(0em) perspective(600px) rotateX(0)');
     });
   });
 });

@@ -21,6 +21,7 @@ describe('initializeState', function() {
           displayedMonth: 10,
           displayedYear: 2015,
           translation: {
+            firstDay: 0,
             format: 'mmm d, yyyy',
             monthsFull: [
               'January',
