@@ -28,6 +28,7 @@ module.exports = function initializeState(opts) {
       selectedMonth: hg.value(selectedDate.getMonth()),
       selectedYear: hg.value(selectedDate.getFullYear()),
       translation: translation,
+      // FIXME: initialize current month
       years: {}
     })
   });

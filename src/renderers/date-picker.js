@@ -17,6 +17,7 @@ module.exports = function datePicker(state) {
     state.model.selectedDay
   );
 
+  // FIXME: add hook for listening/unlistening from window scroll/resize events
   return h('div', {
     style: styles.datePicker
   }, [

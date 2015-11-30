@@ -10,6 +10,7 @@ var styles = {
     left: 'calc(50% - 11rem)',
     padding: '1em',
     position: 'absolute',
+    // FIXME: use https://www.npmjs.com/package/autoprefix
     transition: 'transform 0.15s ease-out, opacity 0.15s ease-out, position 0.15s ease-out, height 0s 0.15s',
     width: '22em'
   }
