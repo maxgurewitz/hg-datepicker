@@ -19,14 +19,14 @@ module.exports = function popUp(state) {
   var popUpStyle = xtend(styles.popUp);
 
   if (state.model.isPopUpTop) {
-    popUpStyle.top =  String(-styles.popUp.height);
+    popUpStyle.top =  '-' + styles.popUp.height;
   }
 
   if (!state.model.isOpen) {
-    popUpStyle.padding = 0;
-    popUpStyle.margin = 0;
     popUpStyle.height = 0;
+    popUpStyle.margin = 0;
     popUpStyle.opacity = 0;
+    popUpStyle.padding = 0;
     popUpStyle.zIndex = -2000;
 
     var translateY = state.model.isPopUpTop ? 1 : -1;
