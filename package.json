@@ -9,13 +9,17 @@
     "lint": "gulp lint:js"
   },
   "dependencies": {
+    "lodash.times": "^3.0.3",
     "mercury": "^14.0.0",
+    "month-days": "^1.0.0",
     "xtend": "^4.0.1"
   },
   "devDependencies": {
     "browserify": "*",
     "chai": "*",
+    "chai-joi": "^1.1.0",
     "chai-subset": "^1.1.0",
+    "chai-things": "^0.2.0",
     "chai-virtual-dom": "^1.0.0",
     "eslint": "*",
     "eslint-plugin-mocha": "*",
@@ -24,6 +28,7 @@
     "gulp-mocha": "*",
     "gulp-rename": "*",
     "gulp-util": "*",
+    "joi": "^7.0.1",
     "mocha": "*",
     "require-directory": "*",
     "vinyl-source-stream": "*",
