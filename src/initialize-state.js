@@ -3,33 +3,58 @@ var translations = require('./translations');
 var dateFormat = require('dateformat');
 var xtend = require('xtend');
 var channels = require('./channels');
+var generateMonth = require('./generate-month');
 
 module.exports = function initializeState(opts) {
   var args = opts || {};
   var translation = xtend(translations['en-US'], translations[args.locale] || {});
-  var selectedDate = args.selectedDate || new Date();
+  var currentDate = args.currentDate || new Date();
+  var selectedDate = args.selectedDate || currentDate;
+
+  var selectedDay = selectedDate.getDate();
+  var selectedMonth = selectedDate.getMonth();
+  var selectedYear = selectedDate.getFullYear();
+
+  var currentDay = currentDate.getDate();
+  var currentMonth = currentDate.getMonth();
+  var currentYear = currentDate.getFullYear();
 
   dateFormat.i18n = {
     dayNames: translation.weekdaysShort.concat(translation.weekdaysFull),
     monthNames: translation.monthsShort.concat(translation.monthsFull)
   };
 
+  var years = {};
+  var month = generateMonth({
+    currentDay: currentDay,
+    currentMonth: currentMonth,
+    currentYear: currentYear,
+    firstDay: translation.firstDay,
+    month: selectedMonth,
+    year: selectedYear
+  });
+
+  years[selectedYear] = {};
+  years[selectedYear][selectedMonth] = month;
+
   return hg.state({
     channels: channels,
     model: hg.struct({
-      displayedMonth: hg.value(selectedDate.getMonth()),
-      displayedYear: hg.value(selectedDate.getFullYear()),
+      currentDay: hg.value(currentDay),
+      currentMonth: hg.value(currentMonth),
+      currentYear: hg.value(currentYear),
+      displayedMonth: hg.value(selectedMonth),
+      displayedYear: hg.value(selectedYear),
       highlightedDayIndex: hg.value(null),
       // FIXME: initialize from element if it exists
       isButtonInBottomHalf: hg.value(false),
       isPopUpTop: hg.value(false),
       isOpen: hg.value(false),
-      selectedDay: hg.value(selectedDate.getDate()),
-      selectedMonth: hg.value(selectedDate.getMonth()),
-      selectedYear: hg.value(selectedDate.getFullYear()),
+      selectedDay: hg.value(selectedDay),
+      selectedMonth: hg.value(selectedMonth),
+      selectedYear: hg.value(selectedYear),
       translation: translation,
-      // FIXME: initialize current month
-      years: {}
+      years: years
     })
   });
 };

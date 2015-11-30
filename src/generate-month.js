@@ -20,6 +20,8 @@ module.exports = function generateMonth(args) {
   var numberOfDaysShownFromNextMonth = settings.numberOfDaysInCalendar -
     (numberOfDaysShownFromLastMonth + numberOfDays);
 
+  // FIXME: all of the "isDisabled" are wrong.  they need to account for the difference
+  // between the selected date and the current date. selected date may be in a different month
   var daysLastMonth = times(numberOfDaysShownFromLastMonth, function buildLastMonthDays(dayIndex) {
     return {
       dayOfMonth: numberOfDaysLastMonth - numberOfDaysShownFromLastMonth + dayIndex + 1,

@@ -15,6 +15,9 @@ describe('initializeState', function() {
           }
         },
         model: {
+          currentDay: 30,
+          currentMonth: 10,
+          currentYear: 2015,
           isOpen: false,
           isPopUpTop: false,
           isButtonInBottomHalf: false,
@@ -74,7 +77,56 @@ describe('initializeState', function() {
           selectedMonth: 10,
           selectedYear: 2015,
           highlightedDayIndex: null,
-          years: {}
+          years: {
+            2015: {
+              10: {
+                displayedDays: [
+                  { dayOfMonth: 1, isDisabled: true },
+                  { dayOfMonth: 2, isDisabled: true },
+                  { dayOfMonth: 3, isDisabled: true },
+                  { dayOfMonth: 4, isDisabled: true },
+                  { dayOfMonth: 5, isDisabled: true },
+                  { dayOfMonth: 6, isDisabled: true },
+                  { dayOfMonth: 7, isDisabled: true },
+                  { dayOfMonth: 8, isDisabled: true },
+                  { dayOfMonth: 9, isDisabled: true },
+                  { dayOfMonth: 10, isDisabled: true },
+                  { dayOfMonth: 11, isDisabled: true },
+                  { dayOfMonth: 12, isDisabled: true },
+                  { dayOfMonth: 13, isDisabled: true },
+                  { dayOfMonth: 14, isDisabled: true },
+                  { dayOfMonth: 15, isDisabled: true },
+                  { dayOfMonth: 16, isDisabled: true },
+                  { dayOfMonth: 17, isDisabled: true },
+                  { dayOfMonth: 18, isDisabled: true },
+                  { dayOfMonth: 19, isDisabled: true },
+                  { dayOfMonth: 20, isDisabled: true },
+                  { dayOfMonth: 21, isDisabled: true },
+                  { dayOfMonth: 22, isDisabled: true },
+                  { dayOfMonth: 23, isDisabled: true },
+                  { dayOfMonth: 24, isDisabled: true },
+                  { dayOfMonth: 25, isDisabled: true },
+                  { dayOfMonth: 26, isDisabled: true },
+                  { dayOfMonth: 27, isDisabled: true },
+                  { dayOfMonth: 28, isDisabled: true },
+                  { dayOfMonth: 29, isDisabled: true },
+                  { dayOfMonth: 30, isDisabled: true },
+                  { dayOfMonth: 1, isDisabled: true },
+                  { dayOfMonth: 2, isDisabled: true },
+                  { dayOfMonth: 3, isDisabled: true },
+                  { dayOfMonth: 4, isDisabled: true },
+                  { dayOfMonth: 5, isDisabled: true },
+                  { dayOfMonth: 6, isDisabled: true },
+                  { dayOfMonth: 7, isDisabled: true },
+                  { dayOfMonth: 8, isDisabled: true },
+                  { dayOfMonth: 9, isDisabled: true },
+                  { dayOfMonth: 10, isDisabled: true },
+                  { dayOfMonth: 11, isDisabled: true },
+                  { dayOfMonth: 12, isDisabled: true }
+                ]
+              }
+            }
+          }
         }
       });
     });

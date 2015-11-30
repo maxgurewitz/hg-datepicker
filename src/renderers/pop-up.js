@@ -1,5 +1,6 @@
 var h = require('mercury').h;
 var xtend = require('xtend');
+var header = require('./header');
 
 var styles = {
   popUp: {
@@ -23,6 +24,7 @@ module.exports = function popUp(state) {
     popUpStyle.top =  '-' + styles.popUp.height;
   }
 
+  var translateY;
   if (!state.model.isOpen) {
     popUpStyle.height = 0;
     popUpStyle.margin = 0;
@@ -30,11 +32,16 @@ module.exports = function popUp(state) {
     popUpStyle.padding = 0;
     popUpStyle.zIndex = -2000;
 
-    var translateY = state.model.isPopUpTop ? 1 : -1;
-    popUpStyle.transform = 'translateY(' + translateY + 'em) perspective(600px)';
+    translateY = state.model.isPopUpTop ? 1 : -1;
+  } else {
+    translateY = 0;
   }
+
+  popUpStyle.transform = 'translateY(' + translateY + 'em) perspective(600px) rotateX(0)';
 
   return h('div', {
     style: popUpStyle
-  }, 'popup');
+  }, [
+    header(state)
+  ]);
 };
