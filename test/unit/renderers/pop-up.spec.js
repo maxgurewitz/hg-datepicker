@@ -34,9 +34,8 @@ describe('popUp', function() {
       state.model.isOpen = false;
     });
 
-    it('it is hidden by reducing its height, opacity etc.', function() {
+    it('it is hidden by reducing its margin, opacity etc.', function() {
       expect(popUp(state).properties.style).to.containSubset({
-        height: 0,
         margin: 0,
         opacity: 0,
         padding: 0,
@@ -70,9 +69,8 @@ describe('popUp', function() {
       state.model.isOpen = true;
     });
 
-    it('its height, opacity etc. are not set to 0', function() {
+    it('its margin, opacity etc. are not set to 0', function() {
       expect(popUp(state).properties.style).to.not.containSubset({
-        height: 0,
         margin: 0,
         opacity: 0,
         padding: 0,

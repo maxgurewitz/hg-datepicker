@@ -26,7 +26,6 @@ module.exports = function popUp(state) {
 
   var translateY;
   if (!state.model.isOpen) {
-    popUpStyle.height = 0;
     popUpStyle.margin = 0;
     popUpStyle.opacity = 0;
     popUpStyle.padding = 0;
