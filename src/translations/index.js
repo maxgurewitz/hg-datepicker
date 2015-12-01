@@ -1,3 +1,5 @@
+// FIXME: only en-us should be requirable by default, all other languages
+// should be passed in as args to minimize package size.
 module.exports = {
   'bg-BG': require('./bg-BG'),
   'bs-BA': require('./bs-BA'),

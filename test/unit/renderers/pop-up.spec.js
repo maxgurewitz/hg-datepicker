@@ -36,9 +36,7 @@ describe('popUp', function() {
 
     it('it is hidden by reducing its margin, opacity etc.', function() {
       expect(popUp(state).properties.style).to.containSubset({
-        margin: 0,
         opacity: 0,
-        padding: 0,
         zIndex: -2000
       });
     });
@@ -71,9 +69,7 @@ describe('popUp', function() {
 
     it('its margin, opacity etc. are not set to 0', function() {
       expect(popUp(state).properties.style).to.not.containSubset({
-        margin: 0,
         opacity: 0,
-        padding: 0,
         zIndex: -2000
       });
     });

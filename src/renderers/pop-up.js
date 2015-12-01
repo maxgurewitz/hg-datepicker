@@ -1,6 +1,7 @@
 var h = require('mercury').h;
 var xtend = require('xtend');
 var header = require('./header');
+var tableHead = require('./table-head');
 
 var styles = {
   popUp: {
@@ -14,6 +15,16 @@ var styles = {
     // FIXME: use https://www.npmjs.com/package/autoprefix
     transition: 'transform 0.15s ease-out, opacity 0.15s ease-out, position 0.15s ease-out, height 0s 0.15s',
     width: '22em'
+  },
+  table: {
+    borderCollapse: 'collapse',
+    borderSpacing: 0,
+    boxSizing: 'border-box',
+    fontSize: 'inherit',
+    marginTop: '1rem',
+    tableLayout: 'fixed',
+    textAlign: 'center',
+    width: '100%'
   }
 };
 
@@ -26,9 +37,7 @@ module.exports = function popUp(state) {
 
   var translateY;
   if (!state.model.isOpen) {
-    popUpStyle.margin = 0;
     popUpStyle.opacity = 0;
-    popUpStyle.padding = 0;
     popUpStyle.zIndex = -2000;
 
     translateY = state.model.isPopUpTop ? 1 : -1;
@@ -41,6 +50,12 @@ module.exports = function popUp(state) {
   return h('div', {
     style: popUpStyle
   }, [
-    header(state)
+    header(state),
+    h('table', {
+      style: styles.table
+    }, [
+      tableHead(state)
+      // tableBody(state)
+    ])
   ]);
 };

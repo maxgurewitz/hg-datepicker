@@ -1,12 +1,12 @@
 var times = require('lodash.times');
 var monthDays = require('month-days');
-var getLastDate = require('./get-last-date');
+var getDate = require('./get-date');
 var getFirstDayOfMonth = require('./get-first-day-of-month');
 var modulo = require('./modulo');
 var settings = require('./settings');
 
 module.exports = function generateMonth(args) {
-  var lastDate = getLastDate(args.month, args.year);
+  var lastDate = getDate.last(args.month, args.year);
 
   var numberOfDays = monthDays(args.month, args.year);
   var numberOfDaysLastMonth = monthDays(lastDate.month, lastDate.year);

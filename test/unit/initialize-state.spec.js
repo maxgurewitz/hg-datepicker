@@ -10,9 +10,9 @@ describe('initializeState', function() {
 
       helpers.expect(state).to.eql({
         channels: {
-          toggle: {
-            type: 'dom-delegator-handle'
-          }
+          lastMonth: { type: 'dom-delegator-handle' },
+          nextMonth: { type: 'dom-delegator-handle' },
+          toggle: { type: 'dom-delegator-handle' }
         },
         model: {
           currentDay: 30,

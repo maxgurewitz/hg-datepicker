@@ -5,6 +5,7 @@ var expect = helpers.expect;
 var joi = helpers.joi;
 
 describe('generateMonth', function() {
+  // FIXME: add test for other language, with another first day
   var monthSchema = joi.object({
     name: joi.string(),
     displayedDays: joi.array().items(joi.object({
