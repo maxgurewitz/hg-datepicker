@@ -1,4 +1,3 @@
-var hg = require('mercury');
 var generateMonth = require('../generate-month');
 
 module.exports = function iterateMonthFactory(iterator) {

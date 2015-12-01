@@ -23,10 +23,6 @@ var styles = {
 };
 
 module.exports = function header(state) {
-  var month = state
-    .model
-    .years[state.model.displayedYear][state.model.displayedYear];
-
   var displayedDate = new Date(
     state.model.displayedYear,
     state.model.displayedMonth

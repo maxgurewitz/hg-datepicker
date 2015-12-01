@@ -5,7 +5,7 @@ describe('initializeState', function() {
   describe('with optional arguments', function() {
     it('contains the expected values', function() {
       var state = initializeState({
-        selectedDate: new Date('Sun Nov 29 2015')
+        currentDate: new Date('Sun Nov 29 2015')
       })();
 
       helpers.expect(state).to.eql({
@@ -15,7 +15,7 @@ describe('initializeState', function() {
           toggle: { type: 'dom-delegator-handle' }
         },
         model: {
-          currentDay: 30,
+          currentDay: 29,
           currentMonth: 10,
           currentYear: 2015,
           isOpen: false,
@@ -110,7 +110,7 @@ describe('initializeState', function() {
                   { dayOfMonth: 27, isDisabled: true },
                   { dayOfMonth: 28, isDisabled: true },
                   { dayOfMonth: 29, isDisabled: true },
-                  { dayOfMonth: 30, isDisabled: true },
+                  { dayOfMonth: 30, isDisabled: false },
                   { dayOfMonth: 1, isDisabled: true },
                   { dayOfMonth: 2, isDisabled: true },
                   { dayOfMonth: 3, isDisabled: true },
