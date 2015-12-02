@@ -17,7 +17,8 @@ module.exports = function datePicker(state) {
     state.model.selectedDay
   );
 
-  // FIXME: add hook for listening/unlistening from window scroll/resize events
+  // FIXME: add hook for listening/unlistening from window scroll/resize events. these can reference
+  // the datePicker element once its been rendered
   return h('div', {
     style: styles.datePicker
   }, [
