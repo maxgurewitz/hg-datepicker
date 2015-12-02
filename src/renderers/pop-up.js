@@ -2,6 +2,7 @@ var h = require('mercury').h;
 var xtend = require('xtend');
 var header = require('./header');
 var tableHead = require('./table-head');
+var tableBody = require('./table-body');
 
 var styles = {
   popUp: {
@@ -54,8 +55,8 @@ module.exports = function popUp(state) {
     h('table', {
       style: styles.table
     }, [
-      tableHead(state)
-      // tableBody(state)
+      tableHead(state),
+      tableBody(state)
     ])
   ]);
 };

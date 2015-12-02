@@ -9,6 +9,7 @@
     "lint": "gulp lint:js"
   },
   "dependencies": {
+    "lodash.chunk": "^3.0.1",
     "lodash.times": "^3.0.3",
     "mercury": "^14.0.0",
     "month-days": "^1.0.0",
